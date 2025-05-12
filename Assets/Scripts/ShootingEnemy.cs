@@ -7,12 +7,10 @@ using UnityEngine;
 
 public class ShootingEnemy : MonoBehaviour
 {
-    [SerializeField] private GameObject bosses;
     [SerializeField] private Transform firePoint;
     [SerializeField] private Bullet bulletpPrefab;
     [SerializeField] private Transform player;
     [SerializeField] private float seeDistance = 15f;
-    [SerializeField][CanBeNull] private Animator animator; 
     bool isBusy = false;
 
     private void Update()
@@ -35,18 +33,11 @@ public class ShootingEnemy : MonoBehaviour
     IEnumerator TestCoroutine()
     {
         isBusy = true;
-        animator.SetBool("isRunning",true);
 
         yield return new WaitForSecondsRealtime(1f);
 
         ShootEnemy();
 
         isBusy = false;
-    }
-
-    public void SetActivBoss()
-    {
-        animator.SetBool("isSpawn",true);
-        bosses.SetActive(true);
     }
 }

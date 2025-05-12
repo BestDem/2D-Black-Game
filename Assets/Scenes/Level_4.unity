@@ -415,11 +415,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5770898739674941243, guid: d21e74ad07d1ba5468dc860f832da79c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.996185
+      value: -0.48866403
       objectReference: {fileID: 0}
     - target: {fileID: 5770898739674941243, guid: d21e74ad07d1ba5468dc860f832da79c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6088803
+      value: -0.4431296
       objectReference: {fileID: 0}
     - target: {fileID: 5770898739674941243, guid: d21e74ad07d1ba5468dc860f832da79c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -480,6 +480,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &204918393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204918388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 8d8f618e66400cf4187cfb6eac20895f, type: 2}
+    - {fileID: 11400000, guid: 6f5e16f656b4faa49bde1aac3f900474, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1081146197}
+          m_TargetAssemblyTypeName: CutsceneManager, Assembly-CSharp
+          m_MethodName: EndCutscene
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1745022460}
+          m_TargetAssemblyTypeName: ShootingEnemy, Assembly-CSharp
+          m_MethodName: SetActivBoss
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &332895357
 GameObject:
   m_ObjectHideFlags: 0
@@ -1430,11 +1475,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6344706325757829880, guid: 2ff5d11c5e134c4488639cb31358bb94, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.965645
+      value: -0.52000415
       objectReference: {fileID: 0}
     - target: {fileID: 6344706325757829880, guid: 2ff5d11c5e134c4488639cb31358bb94, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.3388
+      value: -0.71320003
       objectReference: {fileID: 0}
     - target: {fileID: 6344706325757829880, guid: 2ff5d11c5e134c4488639cb31358bb94, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1650,6 +1695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d36232909f2ab64eb9aef49301da385, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMovement: {fileID: 1163981283}
   cutscenes:
   - cutsceneKey: cut_1
     cutsceneObject: {fileID: 1081146194}
@@ -1701,8 +1747,8 @@ MonoBehaviour:
           m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1745022460}
-          m_TargetAssemblyTypeName: ShootingEnemy, Assembly-CSharp
+        - m_Target: {fileID: 1745022463}
+          m_TargetAssemblyTypeName: Bosses, Assembly-CSharp
           m_MethodName: SetActivBoss
           m_Mode: 1
           m_Arguments:
@@ -1723,7 +1769,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 2b96fa7095987994f92ac68a1255c5ab, type: 2}
-  m_InitialState: 0
+  m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -1832,11 +1878,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6912227622132801734, guid: 021d01d4e822bf143b228d48f4cb05b7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.246
+      value: -1.24
       objectReference: {fileID: 0}
     - target: {fileID: 6912227622132801734, guid: 021d01d4e822bf143b228d48f4cb05b7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.302
+      value: -0.75
       objectReference: {fileID: 0}
     - target: {fileID: 6912227622132801734, guid: 021d01d4e822bf143b228d48f4cb05b7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1877,6 +1923,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6912227622132801734, guid: 021d01d4e822bf143b228d48f4cb05b7, type: 3}
   m_PrefabInstance: {fileID: 1163981277}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1163981283 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6912227622132801733, guid: 021d01d4e822bf143b228d48f4cb05b7, type: 3}
+  m_PrefabInstance: {fileID: 1163981277}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95875d97d31b3b24ab6bc1c7aaf02c2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1251293711
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2816,13 +2873,15 @@ GameObject:
   - component: {fileID: 1745022457}
   - component: {fileID: 1745022460}
   - component: {fileID: 1745022461}
+  - component: {fileID: 1745022462}
+  - component: {fileID: 1745022463}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &1745022454
 Animator:
   serializedVersion: 5
@@ -2987,6 +3046,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1745022462}
+        m_TargetAssemblyTypeName: Death, Assembly-CSharp
+        m_MethodName: ImageDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1745022460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2999,12 +3070,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e84a9490f477c654f9b4d89af15e1848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bosses: {fileID: 1745022453}
   firePoint: {fileID: 792361567}
   bulletpPrefab: {fileID: 5146318520368781137, guid: 8cbbdee5f7e07ae4ca711f4c515ada3c, type: 3}
   player: {fileID: 1163981278}
   seeDistance: 15
-  animator: {fileID: 1745022454}
 --- !u!70 &1745022461
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -3021,6 +3090,32 @@ CapsuleCollider2D:
   m_Offset: {x: 0.11717749, y: 0.043079913}
   m_Size: {x: 0.22360897, y: 0.53355515}
   m_Direction: 0
+--- !u!114 &1745022462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745022453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d1a2880bc3dc4945b063c7cef30ad83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1745022463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745022453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddd13cc743b314f4ba6c85aaf11395e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bosses: {fileID: 1745022453}
+  animator: {fileID: 1745022454}
 --- !u!1 &1766853760
 GameObject:
   m_ObjectHideFlags: 0

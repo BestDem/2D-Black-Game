@@ -14,7 +14,7 @@ public class PlatformMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             // Меняем направление движения
             isMovingRight = !isMovingRight;

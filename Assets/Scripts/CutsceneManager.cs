@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CutsceneManager : MonoBehaviour
 {
+    [SerializeField] private PlayerMovement playerMovement;
     //создание синглтона для гарантирования существования единственного объекта конкретного класса
     public static CutsceneManager Instance;
 
@@ -59,8 +60,8 @@ public class CutsceneManager : MonoBehaviour
         foreach (var cutscene in cutsceneDataBase)
         {
             cutscene.Value.SetActive(false);
-            Debug.Log("старт отключение");
         }
+        playerMovement.SetCanMove(false);
 
         cutsceneDataBase[cutsceneKey].SetActive(true);
     }
@@ -71,6 +72,7 @@ public class CutsceneManager : MonoBehaviour
         {
             activeCutscene.SetActive(false);
             activeCutscene = null;
+            playerMovement.SetCanMove(true);
         }
     }
 }

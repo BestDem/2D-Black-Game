@@ -7,14 +7,17 @@ public class DeathTrigger : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.CompareTag("Player"))
+        if (collider.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
+            PlayerMovement.Instance.SetCanMove(false);
+            CointController.Instance.ResetCoins();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
     
     public void OnButtonRestart()
     {
+        CointController.Instance.ResetCoins();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

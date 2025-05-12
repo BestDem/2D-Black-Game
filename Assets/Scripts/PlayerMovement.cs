@@ -8,10 +8,13 @@ using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static PlayerMovement Instance;
+
     [Header("Movement vars")]
     [SerializeField] private float jumpForce;
     [SerializeField] private float speed;
     [SerializeField] private bool isGrounded = false; 
+    [SerializeField] private bool canMove = true;
 
     [Header("Settings")]
     [SerializeField] private Animator animator; 
@@ -39,12 +42,15 @@ public class PlayerMovement : MonoBehaviour
 
     void Awake()
     {
+        Instance = this;
         player = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
     }
 
     public void Move(float direction, bool isJumpButtonPress)
     {
+        if (!canMove) return;
+        
         if(isJumpButtonPress & isGrounded)
             Jump();
         
@@ -76,5 +82,10 @@ public class PlayerMovement : MonoBehaviour
     {
         playerRotation.flipX = direction < 0;
         firePoint.localPosition = new Vector2(direction > 0 ? 0.1f : -0.1f, firePoint.localPosition.y);
+    }
+
+    public void SetCanMove(bool value)
+    {
+        canMove = value;
     }
 }
