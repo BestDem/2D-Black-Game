@@ -6,6 +6,7 @@ public class DeathPlayer : MonoBehaviour
     [SerializeField] private GameObject deathMenu;
     public void ImageDeathPlayer()
     {
+        CointController.Instance.ResetCoins();
         PlayerMovement.Instance.SetCanMove(false);
         animator.SetBool("isDeath",true);
 

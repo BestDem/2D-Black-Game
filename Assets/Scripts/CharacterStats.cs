@@ -8,10 +8,12 @@ public class CharacterStats : ScriptableObject
     [SerializeField] private string _characterName;
     [SerializeField] private int _health;
     [SerializeField] private int _coints;
+    [SerializeField] private int _stCoints;
 
     public string CharacterName => _characterName;
     public int Health => _health;
     public int Coints => _coints;
+    public int StartCoints => _stCoints;
  
     //Обновление количества монет при старте
     //private void Start()
@@ -23,6 +25,11 @@ public class CharacterStats : ScriptableObject
     {
         _coints += amount;
         PlayerPrefs.SetInt("Coint", _coints);
+    }
+
+    public void CointsInStart()
+    {
+        _coints = _stCoints;
     }
 
     public void DeleleKey()

@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private Animator animator; 
     [SerializeField] private SpriteRenderer playerRotation;
-    [SerializeField] private float jumpOffSet = 0.2f;
+    [SerializeField] private float jumpOffSet = 0.1f;
     [SerializeField] private AnimationCurve curve;
     [SerializeField] private Transform groundColliderTransform;
     [SerializeField] private Transform firePoint;

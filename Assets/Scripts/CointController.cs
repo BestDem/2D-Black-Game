@@ -17,9 +17,8 @@ public class CointController : MonoBehaviour
     {
         Instance = this;
 
-        initialCoins = characterStats.Coints;
-        PlayerPrefs.SetInt("InitialCoins", initialCoins);
-
+        characterStats.CointsInStart();
+        initialCoins = characterStats.StartCoints;
         
         collectedCoins.text = characterStats.Coints.ToString();
     }
@@ -33,8 +32,6 @@ public class CointController : MonoBehaviour
 
     public void ResetCoins()
     {
-        //characterStats.DeleleKey();
-        PlayerPrefs.SetInt("Coint", initialCoins);   // Устанавливает начальное значение
-        collectedCoins.text = initialCoins.ToString();
+        PlayerPrefs.SetInt("Coint", initialCoins);
     }
 }
